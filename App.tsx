@@ -12,8 +12,13 @@ import {
   Platform,
   StatusBar,
 } from "react-native";
+import {
+  useDimensions,
+  useDeviceOrientation,
+} from "@react-native-community/hooks";
 
 export default function App() {
+  const { landscape } = useDeviceOrientation();
   const handlePress = () =>
     // prompt on works on IOS only
     Alert.prompt("My title", "Enter your name", (text: any): void =>
@@ -21,7 +26,13 @@ export default function App() {
     );
   return (
     <SafeAreaView style={styles.container}>
-      <Button color={"orange"} title="Click me now!" onPress={handlePress} />
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: "100%",
+          height: landscape ? "100%" : "30%",
+        }}
+      ></View>
     </SafeAreaView>
   );
 }
