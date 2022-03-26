@@ -8,27 +8,19 @@ import {
   TouchableWithoutFeedback,
   TouchableOpacity,
   TouchableHighlight,
+  Button,
+  Alert,
 } from "react-native";
 
 export default function App() {
-  const handlePress = () => console.log("Pressed!");
+  const handlePress = () =>
+    // prompt on works on IOS only
+    Alert.prompt("My title", "Enter your name", (text: any): void =>
+      console.log(text)
+    );
   return (
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>
-        Hello React Native!
-      </Text>
-      <TouchableHighlight onPress={handlePress}>
-        <Image
-          blurRadius={1}
-          loadingIndicatorSource={require("./assets/icon.png")}
-          source={{
-            width: 200,
-            height: 300,
-            uri: "https://picsum.photos/200/300",
-          }}
-        />
-      </TouchableHighlight>
-      <StatusBar style="auto" />
+      <Button color={"orange"} title="Click me now!" onPress={handlePress} />
     </SafeAreaView>
   );
 }
