@@ -16,25 +16,10 @@ import {
   useDimensions,
   useDeviceOrientation,
 } from "@react-native-community/hooks";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
 
 export default function App() {
-  const { landscape } = useDeviceOrientation();
-  const handlePress = () =>
-    // prompt on works on IOS only
-    Alert.prompt("My title", "Enter your name", (text: any): void =>
-      console.log(text)
-    );
-  return (
-    <SafeAreaView style={styles.container}>
-      <View
-        style={{
-          backgroundColor: "dodgerblue",
-          width: "100%",
-          height: landscape ? "100%" : "30%",
-        }}
-      ></View>
-    </SafeAreaView>
-  );
+  return <WelcomeScreen />;
 }
 
 const styles = StyleSheet.create({
