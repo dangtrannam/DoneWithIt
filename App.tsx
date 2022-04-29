@@ -33,11 +33,12 @@ export default function App() {
           backgroundColor: "dodgerblue",
           height: 100,
           width: 100,
-          borderRadius: 50,
-          borderWidth: 10,
-          borderColor: "red",
-          borderTopWidth: 0,
-          borderTopLeftRadius: 0,
+          shadowColor: "grey",
+          shadowOffset: { width: -10, height: 20 },
+          shadowOpacity: 1,
+          shadowRadius: 10,
+
+          elevation: 5, //android
         }}
       ></View>
     </View>
