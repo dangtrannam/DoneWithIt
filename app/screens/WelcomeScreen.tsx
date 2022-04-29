@@ -11,6 +11,8 @@ import {
   Button,
 } from "react-native";
 
+import colors from "../config/colors";
+
 interface IWelcomeScreenProps {}
 
 function WelcomeScreen(props: IWelcomeScreenProps) {
@@ -23,8 +25,16 @@ function WelcomeScreen(props: IWelcomeScreenProps) {
         <Image style={styles.logo} source={require("../assets/logo-red.png")} />
         <Text>Sell What You Don't Need</Text>
       </View>
-      <Button title="Login" color={"#fc5c65"} onPress={() => true}></Button>
-      <Button title="Register" color={"#4ecdc4"} onPress={() => true}></Button>
+      <Button
+        title="Login"
+        color={colors.primary}
+        onPress={() => true}
+      ></Button>
+      <Button
+        title="Register"
+        color={colors.secondary}
+        onPress={() => true}
+      ></Button>
     </ImageBackground>
   );
 }
@@ -38,7 +48,7 @@ const styles = StyleSheet.create({
   loginButton: {
     width: "100%",
     height: 70,
-    backgroundColor: "#fc5c65",
+    backgroundColor: colors.primary,
     borderRadius: 10,
   },
   logo: {
@@ -54,7 +64,7 @@ const styles = StyleSheet.create({
   registerButton: {
     width: "100%",
     height: 70,
-    backgroundColor: "#4ecdc4",
+    backgroundColor: colors.secondary,
     borderRadius: 10,
   },
 });
