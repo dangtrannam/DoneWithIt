@@ -33,12 +33,27 @@ export default function App() {
           backgroundColor: "dodgerblue",
           height: 100,
           width: 100,
-          shadowColor: "grey",
-          shadowOffset: { width: -10, height: 20 },
-          shadowOpacity: 1,
-          shadowRadius: 10,
-
-          elevation: 5, //android
+          padding: 20,
+          paddingHorizontal: 10,
+          paddingVertical: 30,
+        }}
+      >
+        <View
+          style={{
+            backgroundColor: "red",
+            height: 50,
+            width: 50,
+          }}
+        ></View>
+      </View>
+      <View
+        style={{
+          backgroundColor: "orange",
+          height: 100,
+          width: 100,
+          margin: 10,
+          marginStart: 20,
+          marginTop: 30,
         }}
       ></View>
     </View>
