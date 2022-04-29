@@ -20,7 +20,28 @@ import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 
 export default function App() {
-  return <ViewImageScreen />;
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          height: 100,
+          width: 100,
+          borderRadius: 50,
+          borderWidth: 10,
+          borderColor: "red",
+          borderTopWidth: 0,
+          borderTopLeftRadius: 0,
+        }}
+      ></View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
