@@ -3,8 +3,8 @@ import {
   View,
   StyleSheet,
   Image,
-  TouchableOpacity,
   TouchableHighlight,
+  ImageSourcePropType,
 } from "react-native";
 import AppText from "./AppText";
 import {
@@ -14,14 +14,23 @@ import {
 
 import colors from "../config/colors";
 
+interface IListItemProps {
+  title: string;
+  subTitle?: string;
+  image?: ImageSourcePropType;
+  onPress?: () => void;
+  renderRightActions?: () => JSX.Element;
+  IconComponent?: JSX.Element;
+}
+
 function ListItem({
   title,
-  subTitle,
-  image,
-  IconComponent = null,
-  onPress,
-  renderRightActions,
-}) {
+  subTitle = undefined,
+  image = undefined,
+  IconComponent = undefined,
+  onPress = undefined,
+  renderRightActions = undefined,
+}: IListItemProps) {
   return (
     // android needs to wrap the gesture handler in a gesture handler root view
     <GestureHandlerRootView>
