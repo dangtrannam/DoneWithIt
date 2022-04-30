@@ -1,6 +1,7 @@
 import AppTextInput from "./app/components/AppTextInput";
 import Screen from "./app/components/Screen";
 import AppPicker from "./app/components/AppPicker";
+import { useState } from "react";
 
 const categories = [
   { label: "Fruits", value: 1 },
@@ -9,9 +10,16 @@ const categories = [
 ];
 
 export default function App() {
+  const [category, setCategory] = useState(null);
   return (
     <Screen>
-      <AppPicker items={categories} icon={"apps"} placeholder={"Category"} />
+      <AppPicker
+        selectedItem={category}
+        onSelectItem={setCategory}
+        items={categories}
+        icon={"apps"}
+        placeholder={"Category"}
+      />
       <AppTextInput icon={"email"} placeholder="email" />
     </Screen>
   );
