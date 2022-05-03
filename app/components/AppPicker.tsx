@@ -18,9 +18,11 @@ function AppPicker({
   icon = null,
   items,
   placeholder,
+  PickerItemComponent = PickerItem,
   selectedItem,
   onSelectItem,
   width = "100%",
+  numberOfColumns = 1,
 }) {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   return (
@@ -53,9 +55,10 @@ function AppPicker({
           <FlatList
             data={items}
             keyExtractor={(item) => item.value.toString()}
+            numColumns={numberOfColumns}
             renderItem={({ item }) => (
-              <PickerItem
-                label={item.label}
+              <PickerItemComponent
+                item={item}
                 onPress={() => {
                   setIsVisible(false);
                   onSelectItem(item);
