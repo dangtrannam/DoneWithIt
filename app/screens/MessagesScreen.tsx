@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, ImageSourcePropType, StyleSheet } from "react-native";
 
 import Screen from "../components/Screen";
-import ListItem from "../components/ListItem";
-import ListItemSeparator from "../components/ListItemSeparator";
-import ListItemDeleteAction from "../components/ListItemDeleteAction";
+import {
+  ListItem,
+  ListItemDeleteAction,
+  ListItemSeparator,
+} from "../components/lists";
 
 interface IMessage {
   id: number;
   title: string;
-  image: string;
+  image: ImageSourcePropType;
   description: string;
 }
 const initialMessages: IMessage[] = [

@@ -6,13 +6,13 @@ import {
   TouchableHighlight,
   ImageSourcePropType,
 } from "react-native";
-import AppText from "./AppText";
+import AppText from "../AppText";
 import {
   Swipeable,
   GestureHandlerRootView,
 } from "react-native-gesture-handler";
 
-import colors from "../config/colors";
+import colors from "../../config/colors";
 
 interface IListItemProps {
   title: string;

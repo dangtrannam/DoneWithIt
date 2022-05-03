@@ -1,7 +1,7 @@
 import React from "react";
-import AppText from "./AppText";
+import AppText from "../AppText";
 import { StyleSheet, Image } from "react-native";
-import colors from "../config/colors";
+import colors from "../../config/colors";
 
 function ErrorMessage({ error, visible }) {
   if (!error || !visible) {
