@@ -14,7 +14,13 @@ import AppText from "./AppText";
 import Screen from "./Screen";
 import PickerItem from "./PickerItem";
 
-function AppPicker({ icon, items, placeholder, selectedItem, onSelectItem }) {
+function AppPicker({
+  icon = null,
+  items,
+  placeholder,
+  selectedItem,
+  onSelectItem,
+}) {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   return (
     <>
